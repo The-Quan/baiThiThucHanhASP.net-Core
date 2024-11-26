@@ -1,0 +1,23 @@
+@model IEnumerable<Customer>
+
+<h2>Danh sách khách hàng</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Họ tên</th>
+            <th>Số điện thoại</th>
+            <th>Ngày đăng ký</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model)
+        {
+            <tr>
+                <td>@customer.FullName</td>
+                <td>@customer.PhoneNumber</td>
+                <td>@customer.RegistrationDate.ToString("dd/MM/yyyy")</td>
+            </tr>
+        }
+    </tbody>
+</table>

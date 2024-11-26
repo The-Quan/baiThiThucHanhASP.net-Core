@@ -1,0 +1,83 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = ComicSystem
+build_property.RootNamespace = ComicSystem
+build_property.ProjectDir = D:\BaiThiThucHanhASP.net-core\baiThiThucHanhASP.net-Core\ComicSystem\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\BaiThiThucHanhASP.net-core\baiThiThucHanhASP.net-Core\ComicSystem
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/BaiThiThucHanhASP.net-core/baiThiThucHanhASP.net-Core/ComicSystem/Views/ComicBook/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29taWNCb29rXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BaiThiThucHanhASP.net-core/baiThiThucHanhASP.net-Core/ComicSystem/Views/ComicBook/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29taWNCb29rXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BaiThiThucHanhASP.net-core/baiThiThucHanhASP.net-Core/ComicSystem/Views/ComicBook/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29taWNCb29rXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BaiThiThucHanhASP.net-core/baiThiThucHanhASP.net-Core/ComicSystem/Views/ComicBook/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29taWNCb29rXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BaiThiThucHanhASP.net-core/baiThiThucHanhASP.net-Core/ComicSystem/Views/Customer/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BaiThiThucHanhASP.net-core/baiThiThucHanhASP.net-Core/ComicSystem/Views/Customer/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcUmVnaXN0ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BaiThiThucHanhASP.net-core/baiThiThucHanhASP.net-Core/ComicSystem/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BaiThiThucHanhASP.net-core/baiThiThucHanhASP.net-Core/ComicSystem/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BaiThiThucHanhASP.net-core/baiThiThucHanhASP.net-Core/ComicSystem/Views/RentalReport/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVudGFsUmVwb3J0XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BaiThiThucHanhASP.net-core/baiThiThucHanhASP.net-Core/ComicSystem/Views/Rental/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVudGFsXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BaiThiThucHanhASP.net-core/baiThiThucHanhASP.net-Core/ComicSystem/Views/Rental/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVudGFsXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BaiThiThucHanhASP.net-core/baiThiThucHanhASP.net-Core/ComicSystem/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BaiThiThucHanhASP.net-core/baiThiThucHanhASP.net-Core/ComicSystem/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BaiThiThucHanhASP.net-core/baiThiThucHanhASP.net-Core/ComicSystem/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BaiThiThucHanhASP.net-core/baiThiThucHanhASP.net-Core/ComicSystem/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BaiThiThucHanhASP.net-core/baiThiThucHanhASP.net-Core/ComicSystem/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-yjxlwtys7o
