@@ -5,15 +5,14 @@
 <form method="get">
     <div class="form-group">
         <label>Start Date:</label>
-        <input type="date" name="startDate" value="@Context.Request.Query["startDate"]" class="form-control" />
+        <input type="date" name="startDate" value="@ViewData["StartDate"]" class="form-control" />
     </div>
     <div class="form-group">
         <label>End Date:</label>
-        <input type="date" name="endDate" value="@Context.Request.Query["endDate"]" class="form-control" />
+        <input type="date" name="endDate" value="@ViewData["EndDate"]" class="form-control" />
     </div>
     <button type="submit" class="btn btn-primary">Filter</button>
 </form>
-
 
 <table class="table">
     <thead>
@@ -28,12 +27,12 @@
     <tbody>
         @foreach (var rental in Model)
         {
-            foreach (var detail in rental.RentalDetails)
+            @foreach (var detail in rental.RentalDetails)
             {
                 <tr>
                     <td>@detail.ComicBook.Title</td>
                     <td>@rental.RentalDate.ToShortDateString()</td>
-                    <td>@rental.ReturnDate.ToShortDateString()</td>
+                    <td>@(rental.ReturnDate.ToShortDateString() ?? "N/A")</td>  <!-- Use null-coalescing for ReturnDate -->
                     <td>@rental.Customer.FullName</td>
                     <td>@detail.Quantity</td>
                 </tr>

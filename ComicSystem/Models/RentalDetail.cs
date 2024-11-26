@@ -11,5 +11,4 @@ namespace ComicSystem.Models
         public Rental Rental { get; set; }
         public ComicBook ComicBook { get; set; }
     }
-
 }

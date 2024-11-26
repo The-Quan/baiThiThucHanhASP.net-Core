@@ -1,19 +1,22 @@
-@model ComicBook
+@model ComicSystem.Models.ComicBook
 
 <h2>Add New Comic Book</h2>
 
 <form asp-action="Create" method="post">
     <div class="form-group">
-        <label>Title</label>
+        <label for="Title">Title</label>
         <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label>Author</label>
+        <label for="Author">Author</label>
         <input asp-for="Author" class="form-control" />
+        <span asp-validation-for="Author" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label>Price Per Day</label>
-        <input asp-for="PricePerDay" class="form-control" type="number" step="0.01" />
+        <label for="PricePerDay">Price Per Day</label>
+        <input asp-for="PricePerDay" class="form-control" type="number" />
+        <span asp-validation-for="PricePerDay" class="text-danger"></span>
     </div>
     <button type="submit" class="btn btn-success">Save</button>
 </form>

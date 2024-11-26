@@ -1,7 +1,6 @@
-@model IEnumerable<Rental>
+@model IEnumerable<ComicSystem.Models.Rental>
 
 <h2>Rental List</h2>
-<a asp-action="Create" class="btn btn-primary">Add New Rental</a>
 
 <table class="table">
     <thead>
@@ -10,20 +9,16 @@
             <th>Rental Date</th>
             <th>Return Date</th>
             <th>Status</th>
-            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var rental in Model)
         {
             <tr>
-                <td>@rental.Customer.FullName</td>
+                <td>@rental.Customer?.FullName</td>
                 <td>@rental.RentalDate.ToShortDateString()</td>
                 <td>@rental.ReturnDate.ToShortDateString()</td>
                 <td>@rental.Status</td>
-                <td>
-                    <a asp-action="Details" asp-route-id="@rental.RentalID" class="btn btn-info">Details</a>
-                </td>
             </tr>
         }
     </tbody>
