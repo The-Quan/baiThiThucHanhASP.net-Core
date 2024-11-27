@@ -32,7 +32,7 @@
                 <tr>
                     <td>@detail.ComicBook.Title</td>
                     <td>@rental.RentalDate.ToShortDateString()</td>
-                    <td>@(rental.ReturnDate.ToShortDateString() ?? "N/A")</td>  <!-- Use null-coalescing for ReturnDate -->
+                    <td>@(rental.ReturnDate.ToShortDateString() ?? "N/A")</td>  
                     <td>@rental.Customer.FullName</td>
                     <td>@detail.Quantity</td>
                 </tr>

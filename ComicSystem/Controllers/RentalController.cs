@@ -53,16 +53,14 @@ namespace ComicSystem.Controllers
                 _context.Rentals.Add(rental);
                 await _context.SaveChangesAsync();
 
-                // Add rental details after saving the rental
                 foreach (var detail in rentalDetails)
                 {
-                    detail.RentalID = rental.RentalID; // Link the rental detail to the rental
+                    detail.RentalID = rental.RentalID;
                     _context.RentalDetails.Add(detail);
                 }
 
                 await _context.SaveChangesAsync();
 
-                // Redirect to RentalReportController's Index action
                 return RedirectToAction("Index", "RentalReport");
             }
             catch (Exception ex)
