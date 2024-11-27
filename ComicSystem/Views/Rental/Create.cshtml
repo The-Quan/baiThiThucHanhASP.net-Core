@@ -3,20 +3,107 @@
 <h2>Add New Rental</h2>
 
 <form asp-action="Create" method="post">
+    <!-- Customer Selection -->
     <div class="form-group">
-        <label>Customer ID</label>
-        <input asp-for="CustomerID" class="form-control" type="number" />
+        <label>Customer</label>
+        <select asp-for="CustomerID" class="form-control">
+            @foreach (var customer in ViewBag.Customers)
+            {
+                <option value="@customer.CustomerID">@customer.FullName</option>
+            }
+        </select>
     </div>
 
+    <!-- Rental Date -->
     <div class="form-group">
         <label>Rental Date</label>
         <input asp-for="RentalDate" class="form-control" type="date" />
     </div>
 
+    <!-- Return Date -->
     <div class="form-group">
         <label>Return Date</label>
         <input asp-for="ReturnDate" class="form-control" type="date" />
     </div>
 
+    <h3>Rental Details</h3>
+    <div id="rentalDetailsContainer">
+        <div class="rental-detail">
+            <!-- Comic Book Dropdown -->
+            <div class="form-group">
+                <label>Comic Book</label>
+                <select name="RentalDetails[0].ComicBookID" class="form-control comic-book-dropdown">
+                    @foreach (var comicBook in ViewBag.ComicBooks)
+                    {
+                        <option value="@comicBook.ComicBookID" data-price="@comicBook.PricePerDay">
+                            @comicBook.Title
+                        </option>
+                    }
+                </select>
+            </div>
+
+            <!-- Quantity -->
+            <div class="form-group">
+                <label>Quantity</label>
+                <input name="RentalDetails[0].Quantity" class="form-control quantity-input" type="number" />
+            </div>
+
+            <!-- Price Per Day -->
+            <div class="form-group">
+                <label>Price per Day</label>
+                <input name="RentalDetails[0].PricePerDay" class="form-control price-per-day" type="number" step="0.01" readonly />
+            </div>
+        </div>
+    </div>
+
+    <button type="button" id="addRentalDetail" class="btn btn-primary">Add More Details</button>
     <button type="submit" class="btn btn-success">Save</button>
 </form>
+
+@section Scripts {
+    <script>
+        // Automatically set Price per Day based on selected Comic Book
+        document.addEventListener('change', function (event) {
+            if (event.target.classList.contains('comic-book-dropdown')) {
+                const selectedOption = event.target.selectedOptions[0];
+                const price = selectedOption.dataset.price; // Get price from data-price attribute
+                const parent = event.target.closest('.rental-detail');
+                parent.querySelector('.price-per-day').value = price;
+            }
+        });
+
+        // Add more rental details dynamically
+        let rentalDetailIndex = 1;
+        document.getElementById('addRentalDetail').addEventListener('click', function () {
+            const rentalDetailContainer = document.getElementById('rentalDetailsContainer');
+
+            const newRentalDetail = document.createElement('div');
+            newRentalDetail.classList.add('rental-detail');
+
+            newRentalDetail.innerHTML = `
+                <div class="form-group">
+                    <label>Comic Book</label>
+                    <select name="RentalDetails[${rentalDetailIndex}].ComicBookID" class="form-control comic-book-dropdown">
+                        @foreach (var comicBook in ViewBag.ComicBooks)
+                        {
+                            <option value="@comicBook.ComicBookID" data-price="@comicBook.PricePerDay">
+                                @comicBook.Title
+                            </option>
+                        }
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Quantity</label>
+                    <input name="RentalDetails[${rentalDetailIndex}].Quantity" class="form-control quantity-input" type="number" />
+                </div>
+                <div class="form-group">
+                    <label>Price per Day</label>
+                    <input name="RentalDetails[${rentalDetailIndex}].PricePerDay" class="form-control price-per-day" type="number" step="0.01" readonly />
+                </div>
+            `;
+
+            rentalDetailContainer.appendChild(newRentalDetail);
+            rentalDetailIndex++;
+        });
+    </script>
+}

@@ -15,6 +15,7 @@ namespace ComicSystem.Controllers
         {
             _context = context;
         }
+
         public async Task<IActionResult> Index()
         {
             var rentals = await _context.Rentals.Include(r => r.Customer).ToListAsync();
@@ -24,48 +25,53 @@ namespace ComicSystem.Controllers
         [HttpGet]
         public IActionResult Create()
         {
+            ViewBag.ComicBooks = _context.ComicBooks.ToList();
+
             ViewBag.Customers = _context.Customers.ToList();
+
             return View();
         }
 
+
+
         [HttpPost]
-        public async Task<IActionResult> Create(Rental rental)
+        public async Task<IActionResult> Create(Rental rental, List<RentalDetail> rentalDetails)
         {
             try
             {
-                Console.WriteLine($"Rental Data: CustomerID={rental.CustomerID}, RentalDate={rental.RentalDate}, ReturnDate={rental.ReturnDate}");
-
-                // Tìm kiếm Customer dựa trên CustomerID
                 var customer = await _context.Customers
                                               .FirstOrDefaultAsync(c => c.CustomerID == rental.CustomerID);
 
                 if (customer == null)
                 {
-                    Console.WriteLine($"CustomerID {rental.CustomerID} not found in the database.");
                     ModelState.AddModelError("CustomerID", "Customer not found.");
+                    ViewBag.ComicBooks = _context.ComicBooks.ToList();
                     return View(rental);
                 }
 
-                // Gán thông tin Customer vào Rental
                 rental.Customer = customer;
-
-                // Thêm Rental vào cơ sở dữ liệu
                 _context.Rentals.Add(rental);
-
-                Console.WriteLine("Attempting to save to database...");
                 await _context.SaveChangesAsync();
-                Console.WriteLine("Save successful!");
 
-                return RedirectToAction(nameof(Index));
+                // Add rental details after saving the rental
+                foreach (var detail in rentalDetails)
+                {
+                    detail.RentalID = rental.RentalID; // Link the rental detail to the rental
+                    _context.RentalDetails.Add(detail);
+                }
+
+                await _context.SaveChangesAsync();
+
+                // Redirect to RentalReportController's Index action
+                return RedirectToAction("Index", "RentalReport");
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error: {ex.Message}");
                 ModelState.AddModelError("", "An unexpected error occurred.");
+                ViewBag.ComicBooks = _context.ComicBooks.ToList();
                 return View(rental);
             }
         }
-
 
     }
 }
